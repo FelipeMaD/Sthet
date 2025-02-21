@@ -1,3 +1,4 @@
 # Sthet
 
-Gestão, controle, relatórios e comunidade.
+Práticas de React.js + Vite
+
