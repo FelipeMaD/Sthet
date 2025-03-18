@@ -1,10 +1,13 @@
 import { useState } from "react"
 import ConditionalRender from "./ConditionalRender";
 import ShowUserName from "./ShowUserName"
+import CarDetails from "./CarDetails";
 
 const ListRender = () => {
     const [name, setName] = useState("Alfândega")
     const [list, setList] = useState(["Matheus", "Pedro", "Josias"]);
+
+    const[idade, setIdade] = useState(23)
 
     const [users, setUsers] = useState([
       {id: 1, nome: "Felipe", age: 23},
@@ -37,7 +40,8 @@ const ListRender = () => {
           <button onClick={handleDeleteRandom}>Deletar user aleatorio</button>
           <ConditionalRender/>
         */}
-        <ShowUserName name={name} />
+        <ShowUserName name={name} idade={idade} />
+        <CarDetails brand="fiat" km={80000} color="amarelo" />
     </>
     
   )
