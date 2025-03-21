@@ -3,6 +3,8 @@ import ConditionalRender from "./ConditionalRender";
 import ShowUserName from "./ShowUserName"
 import CarDetails from "./CarDetails";
 import Fragment from "./Fragment"
+import Container from "./Container";
+import FunctionProp from "./FunctionProp";
 
 
 const ListRender = () => {
@@ -35,6 +37,11 @@ const ListRender = () => {
         return prevUsers.filter((user) => randomNumber !== user.id)
       })
     }
+
+
+    const handleShowMesasge = () => {
+      console.log("Estou sendo passando como uma prop no elemento pai")
+    }
   return (
     <>
         {/* <div>Renderizando listas</div>
@@ -60,7 +67,7 @@ const ListRender = () => {
 
          {carList.map((car) => (
           <CarDetails  
-            id={car.id} 
+            key={car.id} 
             brand={car.brand} 
             km={car.km} 
             newCar={car.newCar} 
@@ -70,7 +77,13 @@ const ListRender = () => {
             
         
       <Fragment/>
-        
+      <Container myProp="testandoProp e children">
+        <p>Isso aqui está escrito o elemento pai, viu?</p>
+      </Container>
+
+      {/* exibindo uma função passada como prop  */}
+      
+      <FunctionProp mostrarMensagem={handleShowMesasge}/>
 
     </>
     
