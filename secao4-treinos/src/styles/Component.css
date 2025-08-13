@@ -1,0 +1,18 @@
+div{
+    background-color: #00945f;
+    color: white;
+    font-weight: 800;
+}
+
+.active{
+    background-color: #00945f;
+    font-weight: bolder;
+    color: white;
+    content: "Ativo";
+}
+.unactive{
+    background-color: #909090;
+    font-weight: bolder;
+    color: rgb(83, 83, 83);
+    content: "Inativo";
+}
