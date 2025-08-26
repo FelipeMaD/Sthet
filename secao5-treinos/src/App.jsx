@@ -8,7 +8,7 @@ function App() {
   return (
     < >
      <h1>Forms com react!</h1>
-     <Forms/>
+     <Forms user={{ nome:"joão", idade:"23", email:"joao@gmail.com", descricao:"Descrição gigantemente grande só para mostrar no textarea grandão aaaaaaaaaaaa"}}/>
     </>
   )
 }
