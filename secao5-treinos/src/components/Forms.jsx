@@ -11,6 +11,7 @@ const Forms = ({user}) => {
     const[email, setEmail] = useState(user ? user.email : "");
     const[idade, setIdade] = useState(user ? user.idade : "");
     const[descricao, setDescricao] = useState( user? user.descricao : "")
+    const[funcao, setFuncao] = useState(user ? user.funcao : "")
 
     // const handleName = (e) => {
     //     setName(e.target.value)
@@ -19,12 +20,13 @@ const Forms = ({user}) => {
     const handleSubmit = (e) =>{
         e.preventDefault() // o prevent default evita o recarregamento da pagina ao enviar o formulario, para n estragar a experiencia do usuario!!
         // aqui no corpo do handlesubmit, podemos fazer validações para n enviar coisas erradas pro nosso app
-
+        console.log(name, email, idade, descricao, funcao)
         // limpando formulários - AULA 7
         setName("");
         setEmail("");
         setIdade("");
         setDescricao("");
+        setFuncao("");
     }
 
   return (
@@ -56,7 +58,16 @@ const Forms = ({user}) => {
                 <p>Descrição:</p>
                 <textarea name="descricao" placeholder='Descrição do user...' onChange={(e) => setDescricao(e.target.value)} value={descricao}></textarea>
             </label>
-            
+
+            {/* select no react - AULA 9 */}
+            <label >
+                <span>Função</span>
+                <select name="funcao" id="" onChange={(event) => setFuncao(event.target.value)} value={funcao}>
+                    <option value="user">Usuário</option>
+                    <option value="operario">Operário</option>
+                    <option value="administrador">Administrador</option>
+                </select>
+            </label>
             <input type="submit" value='Enviar'/>
         </form>
         
